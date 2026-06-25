@@ -162,6 +162,8 @@
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             border-top: 4px solid #5a9f8f;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -181,6 +183,7 @@
             margin-bottom: 15px;
             line-height: 1.7;
             font-size: 0.95em;
+            flex-grow: 1;
         }
 
         .project-card .tech-stack {
@@ -193,10 +196,11 @@
         .tech-tag {
             background-color: #e8f1ed;
             color: #4a7f6f;
-            padding: 5px 12px;
+            padding: 6px 13px;
             border-radius: 20px;
             font-size: 0.85em;
             font-weight: 500;
+            white-space: nowrap;
         }
 
         .project-link {
@@ -204,6 +208,7 @@
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
+            align-self: flex-start;
         }
 
         .project-link:hover {
@@ -269,6 +274,11 @@
                 width: 100%;
                 max-width: 300px;
             }
+
+            .tech-tag {
+                font-size: 0.8em;
+                padding: 5px 10px;
+            }
         }
     </style>
 </head>
@@ -302,7 +312,9 @@
                     <div class="tech-stack">
                         <span class="tech-tag">Research Design</span>
                         <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">RStudio</span>
                         <span class="tech-tag">International Study</span>
+                        <span class="tech-tag">Behavioral Research</span>
                     </div>
                     <a href="https://github.com/MiriamBrem/Projects/blob/main/Childrens_Cognition/Childrens_Cognition.pdf" class="project-link">View Research →</a>
                 </div>
@@ -316,7 +328,9 @@
                     <div class="tech-stack">
                         <span class="tech-tag">Linear Regression</span>
                         <span class="tech-tag">Sports Analytics</span>
-                        <span class="tech-tag">Data Science</span>
+                        <span class="tech-tag">Statistical Modeling</span>
+                        <span class="tech-tag">R Programming</span>
+                        <span class="tech-tag">Predictive Analysis</span>
                     </div>
                     <a href="https://github.com/MiriamBrem/Projects/blob/main/NBA_Player_Selection/NBA_Player_Selection.pdf" class="project-link">View Analysis →</a>
                 </div>
@@ -329,8 +343,10 @@
                     </p>
                     <div class="tech-stack">
                         <span class="tech-tag">Statistical Computing</span>
-                        <span class="tech-tag">Data Analysis</span>
                         <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Data Visualization</span>
+                        <span class="tech-tag">Performance Analysis</span>
+                        <span class="tech-tag">Optimization</span>
                     </div>
                     <a href="https://miriambrem.github.io/Classwork/QTM151/F1_Grand_Prix_Analysis.html" class="project-link">View Report →</a>
                 </div>
