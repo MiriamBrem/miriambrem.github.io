@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NBA Player Selection Analysis</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f7f7f7; color: #222; }
+    .wrap { max-width: 1000px; margin: 24px auto; padding: 0 16px; }
+    h1 { font-size: 1.6rem; margin-bottom: 0.5rem; }
+    p { margin-top: 0; }
+    .viewer {
+      width: 100%;
+      height: 85vh;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #fff;
+      overflow: hidden;
+    }
+    iframe, object, embed {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .fallback {
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+    a { color: #0b66c3; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>NBA Player Selection Analysis</h1>
+    <p>Interactive PDF viewer with fallback download link.</p>
+
+    <div class="viewer">
+      <iframe
+        src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https://raw.githubusercontent.com/MiriamBrem/miriambrem.github.io/main/Projects/NBA_Player_Selection/NBA_Player_Selection.pdf"
+        title="NBA Player Selection Analysis PDF">
+      </iframe>
+    </div>
+
+    <p class="fallback">
+      If the viewer doesn’t load,
+      <a href="https://raw.githubusercontent.com/MiriamBrem/miriambrem.github.io/main/Projects/NBA_Player_Selection/NBA_Player_Selection.pdf" target="_blank" rel="noopener noreferrer">
+        open/download the PDF directly
+      </a>.
+    </p>
+  </div>
+</body>
+</html>
