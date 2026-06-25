@@ -17,20 +17,24 @@
             color: #333;
         }
 
-        /* Impressionist art background */
+        /* Monet's Water Lilies inspired background */
         .background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #e8d4f1 0%, #b4d7ff 25%, #a8e6cf 50%, #ffd3a5 75%, #ffb3ba 100%);
-            opacity: 0.7;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(144, 202, 180, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(100, 180, 220, 0.4) 0%, transparent 50%),
+                radial-gradient(ellipse at 40% 80%, rgba(180, 200, 150, 0.3) 0%, transparent 50%),
+                linear-gradient(135deg, #d4e8e0 0%, #c8dff0 25%, #e0d9c8 50%, #f0e8d0 75%, #e8e4d0 100%);
+            opacity: 0.85;
             z-index: -1;
             pointer-events: none;
         }
 
-        /* SVG impressionist brush strokes overlay */
+        /* Water ripple effect overlay */
         .impressionist-overlay {
             position: fixed;
             top: 0;
@@ -38,7 +42,12 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            opacity: 0.3;
+            opacity: 0.2;
+            background-image: 
+                radial-gradient(circle at 15% 25%, rgba(100, 150, 180, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 85% 75%, rgba(150, 180, 140, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(120, 160, 160, 0.2) 2px, transparent 2px);
+            background-size: 100px 100px, 150px 150px, 200px 200px;
         }
 
         /* Main container */
@@ -54,7 +63,7 @@
         header {
             text-align: center;
             padding: 80px 40px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             border-radius: 15px;
             margin-bottom: 60px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
@@ -71,7 +80,7 @@
 
         .tagline {
             font-size: 1.3em;
-            color: #7f8c8d;
+            color: #6b8a7f;
             margin-bottom: 20px;
             font-weight: 300;
         }
@@ -104,24 +113,24 @@
         }
 
         .btn-primary {
-            background-color: #3498db;
+            background-color: #5a9f8f;
             color: white;
         }
 
         .btn-primary:hover {
-            background-color: #2980b9;
+            background-color: #4a8f7f;
             transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 5px 20px rgba(90, 159, 143, 0.4);
         }
 
         .btn-secondary {
             background-color: white;
-            color: #3498db;
-            border: 2px solid #3498db;
+            color: #5a9f8f;
+            border: 2px solid #5a9f8f;
         }
 
         .btn-secondary:hover {
-            background-color: #3498db;
+            background-color: #5a9f8f;
             color: white;
             transform: translateY(-2px);
         }
@@ -147,12 +156,12 @@
         }
 
         .project-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
-            border-top: 4px solid #3498db;
+            border-top: 4px solid #5a9f8f;
         }
 
         .project-card:hover {
@@ -171,6 +180,7 @@
             color: #555;
             margin-bottom: 15px;
             line-height: 1.7;
+            font-size: 0.95em;
         }
 
         .project-card .tech-stack {
@@ -181,8 +191,8 @@
         }
 
         .tech-tag {
-            background-color: #ecf0f1;
-            color: #2c3e50;
+            background-color: #e8f1ed;
+            color: #4a7f6f;
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.85em;
@@ -190,21 +200,21 @@
         }
 
         .project-link {
-            color: #3498db;
+            color: #5a9f8f;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            color: #2980b9;
+            color: #4a8f7f;
         }
 
         /* Footer */
         footer {
             text-align: center;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.88);
             border-radius: 12px;
             color: #7f8c8d;
             font-size: 0.95em;
@@ -218,14 +228,14 @@
         }
 
         .social-links a {
-            color: #3498db;
+            color: #5a9f8f;
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         .social-links a:hover {
-            color: #2980b9;
+            color: #4a8f7f;
         }
 
         /* Responsive */
@@ -263,18 +273,19 @@
     </style>
 </head>
 <body>
-    <!-- Impressionist background -->
+    <!-- Monet's Water Lilies inspired background -->
     <div class="background"></div>
+    <div class="impressionist-overlay"></div>
 
     <div class="container">
         <!-- Header/Hero Section -->
         <header>
             <h1>Miriam Brem</h1>
-            <p class="tagline">Technical Projects & Development Portfolio</p>
-            <p class="intro-text">Welcome to my portfolio. I'm passionate about building innovative solutions and exploring the intersection of creativity and technology.</p>
+            <p class="tagline">Technical Projects & Research Portfolio</p>
+            <p class="intro-text">Exploring data science, statistical analysis, and behavioral research. I'm passionate about leveraging quantitative methods to understand complex systems and drive meaningful insights.</p>
             <div class="cta-buttons">
                 <a href="#projects" class="btn btn-primary">View Projects</a>
-                <a href="mailto:your.email@example.com" class="btn btn-secondary">Get in Touch</a>
+                <a href="mailto:miriam@bremonline.com" class="btn btn-secondary">Get in Touch</a>
             </div>
         </header>
 
@@ -284,44 +295,44 @@
             <div class="projects-grid">
                 <!-- Project 1 -->
                 <div class="project-card">
-                    <h3>Project Name</h3>
+                    <h3>Children's Cognition & Social Behavior</h3>
                     <p class="description">
-                        Brief description of your project goes here. Explain what problem it solves and what makes it unique.
+                        Planned and implemented an international training study on Scottish and Irish primary school children examining the relationship between empathy and everyday behaviors. Investigated the impact of age, screen usage, and sensation seeking on child development.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Technology 1</span>
-                        <span class="tech-tag">Technology 2</span>
-                        <span class="tech-tag">Technology 3</span>
+                        <span class="tech-tag">Research Design</span>
+                        <span class="tech-tag">Statistical Analysis</span>
+                        <span class="tech-tag">International Study</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="https://github.com/MiriamBrem/Projects/blob/main/Childrens_Cognition/Childrens_Cognition.pdf" class="project-link">View Research →</a>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
-                    <h3>Project Name</h3>
+                    <h3>NBA Player Selection Analysis</h3>
                     <p class="description">
-                        Brief description of your project goes here. Explain what problem it solves and what makes it unique.
+                        Used linear regression to analyze how attending different U.S. colleges or non-college/international paths and draft year are associated with player draft position. Accounted for physical characteristics to identify key factors in player selection.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Technology 1</span>
-                        <span class="tech-tag">Technology 2</span>
-                        <span class="tech-tag">Technology 3</span>
+                        <span class="tech-tag">Linear Regression</span>
+                        <span class="tech-tag">Sports Analytics</span>
+                        <span class="tech-tag">Data Science</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="https://github.com/MiriamBrem/Projects/blob/main/NBA_Player_Selection/NBA_Player_Selection.pdf" class="project-link">View Analysis →</a>
                 </div>
 
                 <!-- Project 3 -->
                 <div class="project-card">
-                    <h3>Project Name</h3>
+                    <h3>F1 Grand Prix Analysis</h3>
                     <p class="description">
-                        Brief description of your project goes here. Explain what problem it solves and what makes it unique.
+                        QTM 151 final project analyzing data from the F1 Australian Grand Prix. Concluded that drivers who made fewer pit stops and maintained faster, more efficient pit stop times tended to finish higher in the race.
                     </p>
                     <div class="tech-stack">
-                        <span class="tech-tag">Technology 1</span>
-                        <span class="tech-tag">Technology 2</span>
-                        <span class="tech-tag">Technology 3</span>
+                        <span class="tech-tag">Statistical Computing</span>
+                        <span class="tech-tag">Data Analysis</span>
+                        <span class="tech-tag">Python</span>
                     </div>
-                    <a href="#" class="project-link">View Project →</a>
+                    <a href="https://miriambrem.github.io/Classwork/QTM151/F1_Grand_Prix_Analysis.html" class="project-link">View Report →</a>
                 </div>
             </div>
         </section>
@@ -331,7 +342,7 @@
             <div class="social-links">
                 <a href="https://github.com/MiriamBrem" target="_blank">GitHub</a>
                 <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="mailto:your.email@example.com">Email</a>
+                <a href="mailto:miriam@bremonline.com">Email</a>
             </div>
             <p>&copy; 2026 Miriam Brem. All rights reserved.</p>
         </footer>
