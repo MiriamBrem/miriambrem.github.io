@@ -409,15 +409,7 @@
         }
 
         .disclaimer-header {
-            display: flex;
-            align-items: center;
             margin-bottom: 20px;
-            color: #d9534f;
-        }
-
-        .disclaimer-icon {
-            font-size: 2em;
-            margin-right: 12px;
         }
 
         .disclaimer-header h2 {
@@ -451,22 +443,14 @@
             transition: all 0.3s ease;
         }
 
-        .disclaimer-btn-decline {
-            background-color: #e8e8e8;
-            color: #333;
-        }
-
-        .disclaimer-btn-decline:hover {
-            background-color: #d0d0d0;
-        }
-
         .disclaimer-btn-accept {
-            background-color: #d9534f;
+            background-color: #5a9f8f;
             color: white;
         }
 
         .disclaimer-btn-accept:hover {
-            background-color: #c9453f;
+            background-color: #4a8f7f;
+            box-shadow: 0 5px 20px rgba(90, 159, 143, 0.4);
         }
 
         /* Footer */
@@ -696,13 +680,11 @@
     <div id="disclaimerModal" class="disclaimer-modal" onclick="closeDisclaimer(event)">
         <div class="disclaimer-content" onclick="event.stopPropagation()">
             <div class="disclaimer-header">
-                <span class="disclaimer-icon">⚠️</span>
                 <h2>DATA DISCLAIMER</h2>
             </div>
             <p class="disclaimer-text">The written materials generated or shared are based on data provided by the Office of the DeKalb County District Attorney [hereinafter "DA's Office"]. The data provided and used to generate any written publication or presentation material was provided in support of the teaching and research goals of the academic project known as Emory QTM 498R Capstone Project during the academic year 2025 - 2026. The data provided for the project was provided on an "as is" basis and the DA's Office makes no representation or warranty, express or implied, regarding the data's accuracy, completeness, or use. There are no express or implied warranties of fitness for any particular purpose. Any conclusions drawn or made in the various publications are those of the authors of the paper/presentation and are not the views nor represent the opinions or conclusions of the DA's Office. None of the material, information, or content of the written material shall serve or create a contract, or rights between the DA's Office and any person or entity in receipt of the written materials.</p>
             <div class="disclaimer-actions">
-                <button class="disclaimer-btn disclaimer-btn-decline" onclick="closeDisclaimer()">Decline</button>
-                <button class="disclaimer-btn disclaimer-btn-accept" onclick="acceptDisclaimerAndView()">Accept & Continue</button>
+                <button class="disclaimer-btn disclaimer-btn-accept" onclick="acceptDisclaimerAndView()">Understood</button>
             </div>
         </div>
     </div>
@@ -731,7 +713,7 @@
                 title: "DeKalb County DA Office Performance Analysis",
                 description: "Analyzed felony case data using R and ggplot2 to identify operational trends and evaluate organizational efficiency. Developed visualizations and statistical summaries designed for both technical and nontechnical audiences to support data-driven decision-making.",
                 skills: ["R Programming", "ggplot2", "Data Analysis", "Data Visualization"],
-                link: "https://raw.githubusercontent.com/MiriamBrem/miriambrem.github.io/main/Projects/DeKalb_County_DA/DeKalb_DA_Performance_Analysis.pdf"
+                link: "https://raw.githubusercontent.com/MiriamBrem/miriambrem.github.io/main/Dekalb_DA_Analysis_Paper/Dekalb_Preformance_Analysis.pdf"
             },
             {
                 title: "Coca-Cola Benefits Chatbot",
