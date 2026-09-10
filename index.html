@@ -135,6 +135,9 @@
         /* Projects section */
         .projects-section {
             margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .section-title {
@@ -147,21 +150,27 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 30px;
             margin-bottom: 30px;
+            width: 100%;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.92);
             border-radius: 10px;
-            padding: 22px;
+            padding: 28px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             border-top: 4px solid #5a9f8f;
             display: flex;
             flex-direction: column;
             cursor: pointer;
+            height: 100%;
+            min-height: 400px;
         }
 
         .project-card:hover {
@@ -170,17 +179,17 @@
         }
 
         .project-card h3 {
-            font-size: 1.25em;
+            font-size: 1.35em;
             color: #2c3e50;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
 
         .project-card .description {
             color: #555;
-            margin-bottom: 12px;
-            line-height: 1.5;
-            font-size: 0.9em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 0.95em;
             flex-grow: 1;
         }
 
@@ -365,17 +374,6 @@
             box-shadow: 0 5px 20px rgba(90, 159, 143, 0.4);
         }
 
-        .modal-btn-secondary {
-            background-color: white;
-            color: #5a9f8f;
-            border: 2px solid #5a9f8f;
-        }
-
-        .modal-btn-secondary:hover {
-            background-color: #5a9f8f;
-            color: white;
-        }
-
         /* Disclaimer Modal Styles */
         .disclaimer-modal {
             display: none;
@@ -504,7 +502,12 @@
 
             .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
+                gap: 20px;
+            }
+
+            .project-card {
+                padding: 20px;
+                min-height: 350px;
             }
 
             .cta-buttons {
@@ -615,7 +618,7 @@
                 </div>
 
                 <!-- Project 4 -->
-                <div class="project-card" onclick="openDeKalbModal(3)">
+                <div class="project-card" onclick="openModal(3)">
                     <h3>DeKalb County DA Office Performance Analysis</h3>
                     <p class="description">
                         Analyzed felony case data using R and ggplot2 to identify operational trends and evaluate organizational efficiency for technical and nontechnical audiences.
@@ -724,6 +727,12 @@
         ];
 
         function openModal(index) {
+            // Special handling for DeKalb project (index 3) - show disclaimer instead
+            if (index === 3) {
+                document.getElementById("disclaimerModal").classList.add("active");
+                return;
+            }
+
             const project = projects[index];
             document.getElementById("modalTitle").textContent = project.title;
             document.getElementById("modalDescription").textContent = project.description;
@@ -739,10 +748,6 @@
 
             document.getElementById("modalLink").href = project.link;
             document.getElementById("projectModal").classList.add("active");
-        }
-
-        function openDeKalbModal(index) {
-            document.getElementById("disclaimerModal").classList.add("active");
         }
 
         function closeModal(event) {
