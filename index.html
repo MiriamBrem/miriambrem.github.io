@@ -404,9 +404,13 @@
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
             animation: slideUp 0.3s ease;
             border-left: 5px solid #d9534f;
+            position: relative;
         }
 
         .disclaimer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
 
@@ -414,6 +418,27 @@
             color: #2c3e50;
             font-size: 1.6em;
             margin: 0;
+            flex-grow: 1;
+        }
+
+        .disclaimer-close-btn {
+            background: none;
+            border: none;
+            font-size: 28px;
+            font-weight: bold;
+            color: #d9534f;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .disclaimer-close-btn:hover {
+            color: #c9453f;
         }
 
         .disclaimer-text {
@@ -674,7 +699,7 @@
                 <div class="modal-tech-stack" id="modalTechStack"></div>
             </div>
             <div class="modal-action">
-                <a id="modalLink" class="modal-btn modal-btn-primary" target="_blank">View Full Project</a>
+                <a id="modalLink" class="modal-btn modal-btn-primary" onclick="handleDeKalbClick(event)">View Full Project</a>
             </div>
         </div>
     </div>
@@ -684,6 +709,7 @@
         <div class="disclaimer-content" onclick="event.stopPropagation()">
             <div class="disclaimer-header">
                 <h2>DATA DISCLAIMER</h2>
+                <button class="disclaimer-close-btn" onclick="closeDisclaimer()">&times;</button>
             </div>
             <p class="disclaimer-text">The written materials generated or shared are based on data provided by the Office of the DeKalb County District Attorney [hereinafter "DA's Office"]. The data provided and used to generate any written publication or presentation material was provided in support of the teaching and research goals of the academic project known as Emory QTM 498R Capstone Project during the academic year 2025 - 2026. The data provided for the project was provided on an "as is" basis and the DA's Office makes no representation or warranty, express or implied, regarding the data's accuracy, completeness, or use. There are no express or implied warranties of fitness for any particular purpose. Any conclusions drawn or made in the various publications are those of the authors of the paper/presentation and are not the views nor represent the opinions or conclusions of the DA's Office. None of the material, information, or content of the written material shall serve or create a contract, or rights between the DA's Office and any person or entity in receipt of the written materials.</p>
             <div class="disclaimer-actions">
@@ -726,13 +752,10 @@
             }
         ];
 
-        function openModal(index) {
-            // Special handling for DeKalb project (index 3) - show disclaimer instead
-            if (index === 3) {
-                document.getElementById("disclaimerModal").classList.add("active");
-                return;
-            }
+        let currentProjectIndex = -1;
 
+        function openModal(index) {
+            currentProjectIndex = index;
             const project = projects[index];
             document.getElementById("modalTitle").textContent = project.title;
             document.getElementById("modalDescription").textContent = project.description;
@@ -748,6 +771,18 @@
 
             document.getElementById("modalLink").href = project.link;
             document.getElementById("projectModal").classList.add("active");
+        }
+
+        function handleDeKalbClick(event) {
+            // If it's the DeKalb project (index 3), show disclaimer instead of opening link
+            if (currentProjectIndex === 3) {
+                event.preventDefault();
+                document.getElementById("projectModal").classList.remove("active");
+                document.getElementById("disclaimerModal").classList.add("active");
+            } else {
+                // For other projects, open the link normally
+                window.open(projects[currentProjectIndex].link, "_blank");
+            }
         }
 
         function closeModal(event) {
